@@ -53,7 +53,7 @@ public class CommonAction {
 		for (WebElement item : list) {
 			System.out.println(item.getText());
 		}
-		
+	//	
 		
 //Select From  List 		
 		Select listbox = new Select (driver.findElement(By.xpath("//*[@id='month']")));
@@ -89,3 +89,27 @@ public class CommonAction {
 
 
 }
+//==Hi, I want to automate a dropdown list, but the data in the list would be changing dynamically.
+I need to identify the data by its name because xpath is not working. i am using selenium webdriver===//
+
+@FindBy(xpath = "//div[@id='c_module_combo']/ul/li")
+private List<WebElement> itemList;
+@FindBy(id = "c_module")
+private WebElement dropDownBox;
+
+public void clickItemInDropDown(String value)
+{
+dropDownBox.click();
+for (WebElement item : itemList)
+{
+if (item.getText().equalsIgnoreCase(value))
+{
+item.click():
+}
+}
+}
+//================================================OR=====================//
+WebElement options =driver.findElement(By.xpath("//div[@id='c_userInterface_combo']/ul/li"));
+System.out.println(options.getText());
+if(options.getText().equals("Custom"))
+options.click();
